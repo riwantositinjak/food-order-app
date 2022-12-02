@@ -18,8 +18,8 @@ const cartReducer = (state, action) => {
   return defaultCartState;
 };
 
-const ContextProvider = (props) => {
-  const [cartState, dispatchCartAction] = useReducer(cartReducer);
+const CartProvider = (props) => {
+  const [cartState, dispatchCartAction] = useReducer(cartReducer, defaultCartState);
 
   const addItemsCartHandler = (item) => {
     dispatchCartAction({
@@ -49,4 +49,4 @@ const ContextProvider = (props) => {
   );
 };
 
-export default ContextProvider;
+export default CartProvider;
